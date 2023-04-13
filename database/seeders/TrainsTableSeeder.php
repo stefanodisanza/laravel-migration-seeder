@@ -12,14 +12,14 @@ class TrainsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             DB::table('trains')->insert([
                 'Azienda' => $faker->company,
                 'Stazione di partenza' => $faker->city,
                 'Stazione di arrivo' => $faker->city,
                 'Orario di partenza' => $faker->time($format = 'H:i:s', $max = 'now'),
                 'Orario di arrivo' => $faker->time($format = 'H:i:s', $max = 'now'),
-                'Codice Treno' => $faker->bothify('??###'),
+                'Codice Treno' => $faker->bothify('?????'),
                 'Numero Carrozze' => $faker->numberBetween($min = 1, $max = 20),
                 'In orario' => $faker->boolean,
                 'Cancellato' => $faker->boolean
